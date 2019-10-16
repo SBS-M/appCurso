@@ -5,10 +5,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//Modulos
+import { FacturasModule } from './facturas/facturas.module';
+
 //Service
 import { ProveedoresService } from './providers/proveedores/proveedores.service';
 import { PresupuestosService } from './providers/presupuestos/presupuestos.service';
 import { AutentificacionService } from './providers/autentificacion/autentificacion.service';
+import { GuardService } from './providers/guard/guard.service';
 
 //Componentes
 import { InicioComponent } from './components/inicio/inicio.component';
@@ -18,6 +22,7 @@ import { AddproveeComponent } from './components/addprovee/addprovee.component';
 import { AddpresComponent } from './components/addpres/addpres.component';
 import { RegistroComponent } from './components/autentificacion/registro/registro.component';
 import { InisesComponent } from './components/autentificacion/inises/inises.component';
+import { UploadComponent } from './components/upload/upload.component';
 
 
 @NgModule({
@@ -30,6 +35,7 @@ import { InisesComponent } from './components/autentificacion/inises/inises.comp
     AddpresComponent,
     RegistroComponent,
     InisesComponent,
+    UploadComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,11 +43,13 @@ import { InisesComponent } from './components/autentificacion/inises/inises.comp
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FacturasModule,
   ],
   providers: [
     ProveedoresService,
     PresupuestosService,
     AutentificacionService,
+    GuardService,
   ],
   bootstrap: [AppComponent]
 })

@@ -7,7 +7,9 @@
             <label>Contraseña</label>
             <input type="password" id="inputPassword" class="form-control" formControlName="password" required>
             <hr>
-            <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Inicie sesión</button>
+            <button *ngIf="!autenticando" type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Inicie sesión</button>
+            <button *ngIf="autenticando" type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Autenticando Usuario...</button>
         </form>
+        <p>Si no dispone de cuenta pulse <a routerLink="/registro">aquí</a></p>
     </div>
 </div>
